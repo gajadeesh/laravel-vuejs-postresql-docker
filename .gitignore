@@ -1,0 +1,34 @@
+.DS_Store
+#vue_ignore_files
+/vue_frontend/node_modules
+/vue_frontend/dist
+/vue_frontend/tests/e2e/videos/
+/vue_frontend/tests/e2e/screenshots/
+
+#laravel_ignore_files
+/laravel_api/node_modules
+/laravel_api/public/hot
+/laravel_api/public/storage
+/laravel_api/storage/*.key
+/laravel_api/vendor
+
+
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
