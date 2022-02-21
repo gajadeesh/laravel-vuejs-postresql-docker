@@ -1,0 +1,42 @@
+.text-{
+    //colors
+    &success {
+      color: $success;
+    }
+    &warning {
+      color: $warning;
+    }
+    &muted {
+      color: $muted;
+    }
+    &danger {
+      color: $danger;
+    }
+    &black {
+      color: $blackColor;
+    }
+  
+    //sizes
+    &large{
+      font-size: large;
+    }
+    &normal {
+      font-size: medium;
+    }
+    &small {
+      font-size: small;
+    }
+
+    //alignment
+    &center {
+        text-align: center;
+    }
+    &left {
+        text-align: left;
+    }
+    &right {
+        text-align: right;
+    }
+  }
+    
+  

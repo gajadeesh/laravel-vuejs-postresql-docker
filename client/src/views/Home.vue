@@ -1,17 +1,13 @@
 <template>
-  <div class="home">
-    <h1>Superb</h1>
+  <div id="main">
+    <div class="tof">
+    <h1 class="text-large">Welcome to Emapta Test Application</h1>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
-
 export default {
   name: "Home",
-  components: {
-    // HelloWorld,
-  },
 };
 </script>

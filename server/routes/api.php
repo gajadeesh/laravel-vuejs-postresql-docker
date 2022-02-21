@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ResultController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,48 +25,31 @@ Route::get('/health', function (Request $request) {
     return 'healthy';
 });
 
-//USER
 Route::group([
-    'middleware' => 'api',
+    'middleware' => ['api'],
     'prefix' => 'v1'
 ], function ($router) {
-    Route::post('/user',  function (Request $request) {
-        return 'post user';
-    });
-    Route::get('/user',  function (Request $request) {
-        return 'get user';
-    });
-    Route::put('/user/{id}',  function (Request $request) {
-        return 'update user';
-    });
-    Route::delete('/user/{id}',  function (Request $request) {
-        return 'delete user';
-    });
-});
+    //USER
+    Route::post('/users',  [UserController::class, 'store']);
+    Route::get('/users',  [UserController::class, 'index']);
+    Route::get('/users/all',  [UserController::class, 'all']);
+    Route::get('/users/{id}',  [UserController::class, 'show']);
+    Route::put('/users/{id}',  [UserController::class, 'update']);
+    Route::delete('/users/{id}',  [UserController::class, 'destroy']);
+    Route::post('/users/course/assign', [ResultController::class, 'store']);
 
-//Course
-Route::group([
-    'middleware' => 'api',
-    'prefix' => 'v1'
-], function ($router) {
-    Route::post('/course',  function (Request $request) {
-        return 'post course';
-    });
-    Route::get('/course',  function (Request $request) {
-        return 'get course';
-    });
-    Route::post('/course/assign',  function (Request $request) {
-        return 'post course assign to user';
-    });
-    Route::get('/course/result',  function (Request $request) {
-        return 'get course result';
-    });
-    Route::put('/course/{id}',  function (Request $request) {
-        return 'update course';
-    });
-    Route::delete('/course/{id}',  function (Request $request) {
-        return 'delete course';
-    });
+    //COURSE
+    Route::post('/courses',  [CourseController::class, 'store']);
+    Route::get('/courses', [CourseController::class, 'index']);
+    Route::get('/courses/all',  [CourseController::class, 'all']);
+    Route::put('/courses/{id}',  [CourseController::class, 'update']);
+    Route::delete('/courses/{id}',  [CourseController::class, 'destroy']);
+
+    //RESULT
+    Route::post('/results',  [ResultController::class, 'store']);
+    Route::get('/results', [ResultController::class, 'index']);
+    Route::put('/results/{id}',  [ResultController::class, 'update']);
+    Route::delete('/results/{id}',  [ResultController::class, 'destroy']);
 });
 
 

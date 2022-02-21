@@ -1,0 +1,38 @@
+@import "variables";
+
+.btn {
+   
+   border: none;
+   color: white;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   margin: 4px 2px;
+   padding: 10px 24px;
+   cursor: pointer;
+
+    /* Green */
+    &-success {
+        background-color: $success;
+    }
+    &-warning {
+        background-color: $warning;
+    }
+    &-info {
+        background-color: $info;
+    }
+    &-danger {
+        background-color: $danger;
+    }
+ }
+
+ input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
